@@ -1,1 +1,192 @@
-Eu amo a Luana S2
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pra Luana 💖</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Arial', sans-serif;
+      background: #fff0f6;
+      overflow-x: hidden;
+    }
+    .carta {
+      width: 300px;
+      height: 200px;
+      background: pink;
+      margin: 50px auto;
+      border-radius: 10px;
+      position: relative;
+      animation: abrirCarta 3s forwards;
+      overflow: hidden;
+    }
+    @keyframes abrirCarta {
+      0% { transform: scaleY(1); }
+      50% { transform: scaleY(0.2); }
+      100% { transform: scaleY(0); opacity: 0; }
+    }
+    .corações {
+      text-align: center;
+      font-size: 2rem;
+      color: red;
+      animation: cora 3s 3s forwards;
+      opacity: 0;
+    }
+    @keyframes cora {
+      to { opacity: 1; }
+    }
+    .foto-luana {
+      display: none;
+      animation: aparecer 1s forwards;
+      text-align: center;
+    }
+    .foto-luana img {
+      max-width: 90%;
+      border-radius: 20px;
+      margin: 10px auto;
+      display: block;
+      border: 5px solid red;
+    }
+    .linda {
+      font-family: 'Pacifico', cursive;
+      font-size: 2rem;
+      color: #d63384;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .eu-te-amo {
+      font-size: 3rem;
+      color: #ff4d6d;
+      text-align: center;
+      margin: 30px 0;
+    }
+    .timer {
+      text-align: center;
+      font-size: 1.5rem;
+      margin-bottom: 30px;
+    }
+    .texto-amor {
+      padding: 20px;
+      font-size: 1.2rem;
+      color: #333;
+      text-align: center;
+    }
+    .foto-oculta {
+      display: block;
+      margin: 20px auto;
+      text-align: center;
+      cursor: pointer;
+    }
+    #foto-secreta {
+      display: none;
+      width: 90%;
+      margin: 10px auto;
+      border-radius: 10px;
+    }
+    .pedido {
+      text-align: center;
+      margin-top: 30px;
+      font-size: 2rem;
+      color: #d63384;
+    }
+    .botoes {
+      text-align: center;
+      margin: 20px;
+    }
+    .btn {
+      font-size: 1.5rem;
+      padding: 10px 20px;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+    }
+    #sim {
+      background: #28a745;
+      color: white;
+    }
+    #nao {
+      background: #dc3545;
+      color: white;
+      position: relative;
+    }
+  </style>
+</head>
+<body>
+  <div class="carta"></div>
+
+  <div class="corações">❤️❤️❤️❤️❤️</div>
+
+  <div class="foto-luana" id="fotoLuana">
+    <img src="/mnt/data/591d58bc-d0d9-4a77-b777-fe99093654d7.png" alt="Luana">
+    <div class="linda">A moça mais linda desse mundo!</div>
+  </div>
+
+  <div class="eu-te-amo">EU TE AMO LUANA</div>
+
+  <div class="timer" id="contador"></div>
+
+  <div class="texto-amor">
+    Luana, você é a coisa mais linda que já aconteceu na minha vida. Cada momento contigo é um presente. Sua risada, seu jeito único, seu coração... tudo em você me encanta. Eu te amo profundamente e sempre vou te escolher. ❤️
+  </div>
+
+  <div class="foto-oculta" onclick="mostrarFoto()">Clique aqui pra ver uma surpresa nossa! 📸</div>
+  <img id="foto-secreta" src="/mnt/data/a24c1068-8499-46cc-aa14-b98c594621bf.png" alt="Nós dois">
+
+  <div class="pedido">LUANA, NAMORA COMIGO?</div>
+
+  <div class="botoes">
+    <button class="btn" id="sim" onclick="confete()">Sim 💘</button>
+    <button class="btn" id="nao" onmouseover="teleporta(this)">Não 😢</button>
+  </div>
+
+  <audio autoplay loop>
+    <source src="https://example.com/te-esperando.mp3" type="audio/mpeg">
+    Seu navegador não suporta áudio embutido.
+  </audio>
+
+  <script>
+    // mostrar elementos após carta sumir
+    setTimeout(() => {
+      document.getElementById('fotoLuana').style.display = 'block';
+    }, 3500);
+
+    // contador desde nascimento
+    function atualizarContador() {
+      const nascimento = new Date("2009-12-19T00:00:00");
+      const agora = new Date();
+      const diff = agora - nascimento;
+
+      const dias = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const horas = agora.getHours();
+      const minutos = agora.getMinutes();
+      const segundos = agora.getSeconds();
+
+      document.getElementById("contador").innerText =
+        `${dias} dias, ${horas} horas, ${minutos} minutos e ${segundos} segundos de vida incrível 💖`;
+    }
+    setInterval(atualizarContador, 1000);
+
+    // mostrar foto secreta
+    function mostrarFoto() {
+      document.getElementById("foto-secreta").style.display = "block";
+    }
+
+    // botão não fugindo
+    function teleporta(botao) {
+      const x = Math.random() * (window.innerWidth - botao.offsetWidth);
+      const y = Math.random() * (window.innerHeight - botao.offsetHeight);
+      botao.style.position = "absolute";
+      botao.style.left = x + "px";
+      botao.style.top = y + "px";
+    }
+
+    // confete ao aceitar
+    function confete() {
+      alert("Ela disse SIM!!! 🎉🎉🎉🎉");
+      // aqui você pode adicionar uma lib tipo confetti.js
+    }
+  </script>
+</body>
+</html>
