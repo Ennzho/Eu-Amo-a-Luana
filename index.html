@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Pra Menina Mais Linda 💌</title>
+  <title>Para Luana 💖</title>
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Special+Elite&display=swap" rel="stylesheet">
   <style>
     body {
@@ -23,6 +23,18 @@
       text-align: center;
       cursor: pointer;
       margin-bottom: 30px;
+      animation: abrirCarta 2s ease forwards;
+    }
+
+    @keyframes abrirCarta {
+      0% {
+        transform: scale(0.5) rotate(-10deg);
+        opacity: 0;
+      }
+      100% {
+        transform: scale(1) rotate(0deg);
+        opacity: 1;
+      }
     }
 
     .envelope img {
@@ -45,24 +57,46 @@
       text-align: center;
     }
 
-    .carta img {
-      width: 80%;
-      max-width: 400px;
-      margin: 15px 0;
-      border-radius: 14px;
-      transition: 0.5s ease;
+    .heart-image {
+      width: 250px;
+      aspect-ratio: 1;
+      object-fit: cover;
+      object-position: center;
+      clip-path: polygon(50% 0%, 100% 35%, 80% 100%, 20% 100%, 0% 35%);
+      margin: 20px 0;
     }
 
-    .texto-declaracao {
+    .typewriter {
       font-family: 'Special Elite', monospace;
       font-size: 16px;
       color: #333;
       white-space: pre-line;
+      overflow: hidden;
+      border-right: .15em solid pink;
+      white-space: nowrap;
+      margin: 0 auto;
+      letter-spacing: .15em;
+      animation: typing 4s steps(40, end), blink-caret .75s step-end infinite;
+    }
+
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+
+    @keyframes blink-caret {
+      from, to { border-color: transparent }
+      50% { border-color: pink; }
     }
 
     .imagem-borrada {
       filter: blur(10px);
       cursor: pointer;
+      transition: filter 0.5s ease;
+    }
+
+    .imagem-borrada:hover {
+      filter: blur(5px);
     }
 
     .botoes {
@@ -116,6 +150,12 @@
         opacity: 0;
       }
     }
+
+    #contador {
+      font-size: 18px;
+      margin-top: 20px;
+      color: #555;
+    }
   </style>
 </head>
 <body>
@@ -125,20 +165,14 @@
   </div>
 
   <div class="carta" id="carta">
-    <h1>Pra coisa mais linda do universo 💖</h1>
-    <img src="https://imgur.com/qfVoxTB.png" alt="Você" />
+    <h1>Para a coisa mais linda do universo 💖</h1>
+    <img src="https://imgur.com/qfVoxTB.png" alt="Você" class="heart-image" />
 
-    <p class="texto-declaracao">
-Desde que você apareceu na minha vida, tudo ficou mais colorido.
-
-Você tem esse jeitinho doce, um olhar que me desmonta e um coração lindo. Cada conversa contigo é um presente. 🥺
-
-Hoje, escrevo isso pra te dizer que você é mais que especial. E... sim, eu gosto de você. Muito. De verdade. 💗
-
-Eu quero viver momentos bobos e lindos contigo, fazer planos, rir à toa e cuidar de você com todo carinho.
-
-Você aceitaria viver essa aventura comigo?
+    <p class="typewriter" id="declaracao">
+      <!-- O texto será inserido via JavaScript para o efeito de digitação -->
     </p>
+
+    <div id="contador"></div>
 
     <img src="https://imgur.com/undefined" alt="Nós dois" class="imagem-borrada" id="imgRevelar" onclick="revelarImagem()"/>
 
@@ -148,9 +182,16 @@ Você aceitaria viver essa aventura comigo?
     </div>
   </div>
 
+  <audio autoplay loop>
+    <source src="te_esperando.mp3" type="audio/mpeg">
+    Seu navegador não suporta o elemento de áudio.
+  </audio>
+
   <script>
     function mostrarCarta() {
       document.getElementById('carta').style.display = 'block';
+      typeWriter();
+      iniciarContador();
     }
 
     function revelarImagem() {
@@ -181,6 +222,34 @@ Você aceitaria viver essa aventura comigo?
       const y = Math.floor(Math.random() * 200) - 100;
       btn.style.transform = `translate(${x}px, ${y}px)`;
     }
-  </script>
-</body>
-</html>
+
+    // Efeito de máquina de escrever
+    const texto = `Desde que você apareceu na minha vida, tudo ficou mais colorido.
+
+Você tem esse jeitinho doce, um olhar que me desmonta e um coração lindo. Cada conversa contigo é um presente. 🥺
+
+Hoje, escrevo isso pra te dizer que você é mais que especial. E... sim, eu gosto de você. Muito. De verdade. 💗
+
+Eu quero viver momentos bobos e lindos contigo, fazer planos, rir à toa e cuidar de você com todo carinho.
+
+Você aceitaria viver essa aventura comigo?`;
+
+    let i = 0;
+    function typeWriter() {
+      if (i < texto.length) {
+        document.getElementById("declaracao").innerHTML += texto.charAt(i);
+        i++;
+        setTimeout(typeWriter, 50);
+      }
+    }
+
+    // Contador desde o nascimento
+    function iniciarContador() {
+      const nascimento = new Date('2009-12-19T00:00:00');
+      setInterval(() => {
+        const agora = new Date();
+        const diff = agora - nascimento;
+
+        const anos = Math.floor(diff / (1000 * 60 * 60 * 24 * 365
+::contentReference[oaicite:34]{index=34}
+ 
