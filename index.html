@@ -4,18 +4,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Pra Menina Mais Linda 💌</title>
-  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Special+Elite&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
       padding: 0;
-      background-color: #ffeef4;
+      background: linear-gradient(135deg, #ffeef4, #fff1f7);
       font-family: 'Pacifico', cursive;
       display: flex;
       justify-content: center;
       align-items: center;
       flex-direction: column;
       min-height: 100vh;
+      overflow-x: hidden;
     }
 
     .envelope {
@@ -36,8 +37,8 @@
     .carta {
       display: none;
       background-color: white;
-      border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      border-radius: 18px;
+      box-shadow: 0 6px 30px rgba(0,0,0,0.15);
       max-width: 600px;
       padding: 30px;
       margin: 0 20px;
@@ -47,12 +48,25 @@
     .carta img {
       width: 80%;
       max-width: 400px;
-      margin: 10px 0;
-      border-radius: 12px;
+      margin: 15px 0;
+      border-radius: 14px;
+      transition: 0.5s ease;
+    }
+
+    .texto-declaracao {
+      font-family: 'Special Elite', monospace;
+      font-size: 16px;
+      color: #333;
+      white-space: pre-line;
+    }
+
+    .imagem-borrada {
+      filter: blur(10px);
+      cursor: pointer;
     }
 
     .botoes {
-      margin-top: 20px;
+      margin-top: 25px;
     }
 
     button {
@@ -61,7 +75,7 @@
       margin: 10px;
       padding: 10px 30px;
       border: none;
-      border-radius: 20px;
+      border-radius: 30px;
       cursor: pointer;
       transition: all 0.3s ease;
     }
@@ -81,19 +95,26 @@
       position: relative;
     }
 
-    @keyframes confete {
-      0% {transform: translateY(0);}
-      100% {transform: translateY(100vh);}
-    }
-
     .confete {
       position: fixed;
-      width: 10px;
-      height: 10px;
-      background-color: red;
-      top: 0;
-      animation: confete 3s linear forwards;
-      opacity: 0.7;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      top: 50%;
+      animation: voar 3s ease forwards;
+      opacity: 0.8;
+      z-index: 999;
+    }
+
+    @keyframes voar {
+      0% {
+        transform: translateX(0) translateY(0) scale(1);
+        opacity: 1;
+      }
+      100% {
+        transform: translateX(var(--x)) translateY(var(--y)) rotate(720deg) scale(0.5);
+        opacity: 0;
+      }
     }
   </style>
 </head>
@@ -104,17 +125,23 @@
   </div>
 
   <div class="carta" id="carta">
-    <h1>Para a moça mais linda desse mundo 💖</h1>
-    <img src="https://cdn.discordapp.com/attachments/1174412737296748656/1370552505833885736/file-MpKXkf15NPyVj4w1YqZ2Ww.png" alt="Você"/>
-    <p>
-      Desde o momento em que nossos caminhos se cruzaram, tudo ficou mais bonito. Cada conversa, cada risada, cada troca de olhares… tudo com você tem um brilho especial. <br><br>
-      Você é o tipo de pessoa que ilumina o mundo de quem tem a sorte de te conhecer. E, olha, eu sou um sortudo. Tem algo em você que encanta, acalma e ao mesmo tempo acelera meu coração. <br><br>
-      Não estou aqui só pra dizer o quanto te admiro, mas pra abrir meu coração. Eu gosto de você de um jeito sincero, puro e verdadeiro. Quero estar ao seu lado, te apoiar, te fazer sorrir, viver momentos simples e únicos contigo. <br><br>
-      Você aceitaria viver essa aventura comigo? 🥺💗
+    <h1>Pra coisa mais linda do universo 💖</h1>
+    <img src="https://imgur.com/qfVoxTB.png" alt="Você" />
+
+    <p class="texto-declaracao">
+Desde que você apareceu na minha vida, tudo ficou mais colorido.
+
+Você tem esse jeitinho doce, um olhar que me desmonta e um coração lindo. Cada conversa contigo é um presente. 🥺
+
+Hoje, escrevo isso pra te dizer que você é mais que especial. E... sim, eu gosto de você. Muito. De verdade. 💗
+
+Eu quero viver momentos bobos e lindos contigo, fazer planos, rir à toa e cuidar de você com todo carinho.
+
+Você aceitaria viver essa aventura comigo?
     </p>
 
-    <img src="https://cdn.discordapp.com/attachments/1174412737296748656/1370552561152557176/file-H4YQNScDkfe54RsTxrK7qs.png" alt="Nós dois">
-    
+    <img src="https://imgur.com/undefined" alt="Nós dois" class="imagem-borrada" id="imgRevelar" onclick="revelarImagem()"/>
+
     <div class="botoes">
       <button class="sim" onclick="confetes()">Sim 💘</button>
       <button class="nao" onclick="foge(this)">Não 😢</button>
@@ -126,20 +153,32 @@
       document.getElementById('carta').style.display = 'block';
     }
 
+    function revelarImagem() {
+      const img = document.getElementById('imgRevelar');
+      img.classList.remove("imagem-borrada");
+    }
+
     function confetes() {
-      for (let i = 0; i < 100; i++) {
-        let conf = document.createElement('div');
-        conf.className = 'confete';
-        conf.style.left = Math.random() * 100 + 'vw';
-        conf.style.backgroundColor = ['#ff5e92', '#ffb6c1', '#ff1493', '#ffc0cb'][Math.floor(Math.random() * 4)];
+      for (let i = 0; i < 60; i++) {
+        const conf = document.createElement("div");
+        conf.className = "confete";
+        const cor = ["#ff69b4", "#ffc0cb", "#ff1493", "#ffb6c1", "#fff0f5"][Math.floor(Math.random() * 5)];
+        conf.style.backgroundColor = cor;
+
+        const lado = Math.random() < 0.5 ? "left" : "right";
+        conf.style[lado] = "-10px";
+        conf.style.top = `${Math.random() * 100}vh`;
+        conf.style.setProperty('--x', `${lado === "left" ? 100 : -100}vw`);
+        conf.style.setProperty('--y', `${Math.random() * -100 - 50}vh`);
+
         document.body.appendChild(conf);
         setTimeout(() => conf.remove(), 3000);
       }
     }
 
     function foge(btn) {
-      const x = Math.floor(Math.random() * 300) - 150;
-      const y = Math.floor(Math.random() * 300) - 150;
+      const x = Math.floor(Math.random() * 200) - 100;
+      const y = Math.floor(Math.random() * 200) - 100;
       btn.style.transform = `translate(${x}px, ${y}px)`;
     }
   </script>
