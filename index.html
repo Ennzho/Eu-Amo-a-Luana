@@ -2,46 +2,53 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <title>Para Luana 💖</title>
+  <title>Para a Menina Mais Linda</title>
   <style>
     body {
-      background-color: #ffeef4;
+      background-color: #ffe6f0;
       font-family: 'Courier New', Courier, monospace;
+      text-align: center;
       margin: 0;
       padding: 0;
-      text-align: center;
-      overflow-x: hidden;
     }
-    .envelope {
-      width: 120px;
-      margin: 20px auto;
-      animation: bounce 2s infinite;
+
+    .container {
+      padding: 40px 20px;
     }
-    @keyframes bounce {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
-    }
-    .mensagem {
-      background-color: white;
-      display: inline-block;
-      padding: 20px;
+
+    .love-letter {
+      background-color: #fff0f5;
+      padding: 30px;
       border-radius: 20px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      max-width: 700px;
-      margin: 20px auto;
-      white-space: pre-wrap;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
     }
-    .blurred {
+
+    .love-photo {
+      width: 200px;
+      border-radius: 20px;
+      object-fit: cover;
+      margin-bottom: 20px;
+    }
+
+    .hidden-img {
       filter: blur(10px);
       transition: filter 0.5s;
       cursor: pointer;
     }
-    .contador {
-      font-size: 1.5em;
-      margin-top: 20px;
-      font-weight: bold;
+
+    .hidden-img.revealed {
+      filter: blur(0);
     }
-    .confetes {
+
+    #contador {
+      font-size: 20px;
+      margin: 20px 0;
+    }
+
+    #confetes {
       position: fixed;
       top: 0;
       left: 0;
@@ -50,140 +57,122 @@
       pointer-events: none;
       z-index: 999;
     }
-    .confete {
-      width: 10px;
-      height: 10px;
-      background-color: pink;
-      position: absolute;
-      animation: cair 3s forwards;
-    }
-    @keyframes cair {
-      0% { opacity: 1; transform: translateY(0) rotate(0deg); }
-      100% { opacity: 0; transform: translateY(100vh) rotate(720deg); }
-    }
-    .foto {
-      max-width: 250px;
-      border-radius: 20px;
-      margin: 15px 0;
-    }
-    .botoes {
-      margin-top: 30px;
-    }
-    .botao {
-      padding: 15px 25px;
+
+    .btn {
       font-size: 18px;
-      margin: 10px;
+      padding: 12px 25px;
       border: none;
       border-radius: 12px;
       cursor: pointer;
-      transition: 0.3s;
+      margin: 10px;
+      transition: all 0.2s ease-in-out;
     }
-    .botao:hover {
-      transform: scale(1.1);
-    }
-    .sim {
+
+    .btn-yes {
       background-color: #ff69b4;
       color: white;
     }
-    .nao {
-      background-color: #ddd;
+
+    .btn-no {
+      background-color: #eee;
+      color: #333;
+      position: relative;
     }
+
+    #pedido {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
     footer {
-      margin-top: 50px;
-      font-size: 0.9em;
-      color: #999;
+      margin-top: 40px;
+      font-size: 14px;
+      color: #888;
     }
   </style>
 </head>
 <body>
+<div id="confetes"></div>
+<div class="container">
+  <div class="love-letter">
+    <img src="https://i.imgur.com/qfVoxTB.png" alt="Luana linda" class="love-photo">
+    <h2>A coisa mais linda desse mundo!</h2>
+    <p id="contador"></p>
+    <p style="text-align: left; white-space: pre-wrap;">
+      Desde o instante em que você chegou na minha vida, tudo ficou mais leve, mais bonito, mais cheio de propósito.
 
-  <img class="envelope" src="https://cdn-icons-png.flaticon.com/512/833/833472.png" alt="Cartinha">
-  
-  <div class="mensagem">
-    <h2>💌 Uma carta muito especial pra menina mais linda do mundo 💌</h2>
-    <p style="text-align: left;">
-      Desde o dia em que nossos caminhos se cruzaram, tudo ficou mais leve, mais bonito, mais cheio de significado. Cada sorriso seu ilumina tudo ao meu redor, e cada momento contigo se torna uma lembrança preciosa guardada no coração.
+      Cada sorriso seu me desmonta e ao mesmo tempo me constrói de novo, mais forte, mais bobo, mais seu. Luana, você é um daqueles milagres que a gente não entende, só agradece.
 
-      Eu não sei ao certo como explicar, mas você tem um jeitinho de transformar dias normais em histórias inesquecíveis. Seu jeito me encanta, sua risada me faz sorrir por dentro e sua presença me dá paz.
+      Não é só sobre gostar... é sobre enxergar o universo inteiro dentro de você. É sobre querer cuidar de cada detalhe seu, sobre se apaixonar até pelos teus silêncios. É sobre ficar nervoso só de te olhar e ainda assim querer olhar pra sempre.
 
-      Você é aquela luz suave no meio da tempestade, a calma depois do caos, a inspiração por trás de tudo que escrevo e sinto. Não é exagero dizer que pensar em você é como ouvir uma música boa repetidamente e nunca enjoar.
+      Eu admiro o teu jeito, a tua fé, tua força, tua forma única de ser luz. E se eu pudesse te escrever mil cartas, nenhuma explicaria o tanto que você significa pra mim.
 
-      O tempo que passamos juntos, mesmo nas menores conversas, são pedaços de eternidade pra mim. E eu queria que você soubesse o quanto você é importante. O quanto você é linda. O quanto eu me importo. E o quanto eu quero fazer você feliz.
+      Eu não quero ser só mais um na sua vida. Quero ser AQUELE. O que tá sempre aqui. Que te abraça com o coração. Que te admira todos os dias.
 
-      💖
+      Por isso...
+
+      <strong>Namora comigo?</strong>
     </p>
-  </div>
 
-  <div class="contador" id="contador"></div>
-
-  <img class="foto" src="https://imgur.com/qfVoxTB.png" alt="A moça mais linda do mundo">
-
-  <img class="foto blurred" id="fotoBlur" src="https://imgur.com/84rYmr8.png" alt="nós dois">
-  
-  <script>
-    document.getElementById("fotoBlur").onclick = function() {
-      this.classList.remove("blurred");
-    };
-
-    function atualizarContador() {
-      const nascimento = new Date("2009-08-23T00:00:00"); // exemplo
-      const agora = new Date();
-      const diff = agora - nascimento;
-
-      const anos = Math.floor(diff / (1000 * 60 * 60 * 24 * 365.25));
-      const dias = Math.floor((diff / (1000 * 60 * 60 * 24)) % 365.25);
-      const horas = agora.getHours();
-      const minutos = agora.getMinutes();
-      const segundos = agora.getSeconds();
-
-      document.getElementById("contador").innerText =
-        `Você existe há ${anos} anos, ${dias} dias, ${horas}h ${minutos}min ${segundos}s ❤️`;
-    }
-
-    setInterval(atualizarContador, 1000);
-    atualizarContador();
-  </script>
-
-  <!-- Pedido de namoro -->
-  <div class="mensagem">
-    <h2>💘 Agora me responde uma coisa...</h2>
-    <h1 style="color:#ff69b4;">LUANA, NAMORA COMIGO?</h1>
-    <div class="botoes">
-      <button class="botao sim" onclick="mostrarConfetes()">SIM!!! 💖</button>
-      <button class="botao nao" id="naoBtn">NÃO 😢</button>
+    <div id="pedido">
+      <button class="btn btn-yes" onclick="aceitouPedido()">SIM 💖</button>
+      <button class="btn btn-no" onclick="teleportarBotao(event)">NÃO 😢</button>
     </div>
+
+    <img src="https://i.imgur.com/84rYmr8.png" alt="Ennzho" style="width: 120px; border-radius: 20px; margin-top: 20px;">
+    <p><em>Com amor (e muito carinho no coração), menininho Ennzho</em></p>
   </div>
 
-  <div class="confetes" id="confetes"></div>
+  <footer>LUANA reservada só pro ENNZHO — Todos os direitos reservados 💘</footer>
+</div>
 
-  <script>
-    document.getElementById("naoBtn").addEventListener("mouseover", function () {
-      const x = Math.random() * (window.innerWidth - 100);
-      const y = Math.random() * (window.innerHeight - 50);
-      this.style.position = "absolute";
-      this.style.left = x + "px";
-      this.style.top = y + "px";
-    });
+<script>
+  const nascimento = new Date('2009-03-10T00:00:00');
+  function atualizarContador() {
+    const agora = new Date();
+    const diff = agora - nascimento;
+    const dias = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const horas = agora.getHours();
+    const minutos = agora.getMinutes();
+    const segundos = agora.getSeconds();
+    document.getElementById('contador').innerText = `Você está nesse mundo há ${dias} dias, ${horas} horas, ${minutos} minutos e ${segundos} segundos... e o mundo tá mais lindo desde então.`;
+  }
+  setInterval(atualizarContador, 1000);
 
-    function mostrarConfetes() {
-      const confetes = document.getElementById("confetes");
-      for (let i = 0; i < 100; i++) {
-        const c = document.createElement("div");
-        c.classList.add("confete");
-        c.style.left = Math.random() < 0.5 ? "-20px" : window.innerWidth + 20 + "px";
-        c.style.top = Math.random() * window.innerHeight + "px";
-        c.style.backgroundColor = ['#ff69b4', '#ffb6c1', '#fff0f5'][Math.floor(Math.random() * 3)];
-        c.style.animationDuration = (Math.random() * 2 + 2) + "s";
-        confetes.appendChild(c);
-        setTimeout(() => confetes.removeChild(c), 3000);
-      }
+  function teleportarBotao(e) {
+    const botao = e.target;
+    botao.style.position = 'absolute';
+    botao.style.top = Math.random() * 400 + 'px';
+    botao.style.left = Math.random() * 90 + '%';
+  }
+
+  function aceitouPedido() {
+    document.getElementById('pedido').innerHTML = '<h2>EU TE AMOOOO 💘💘💘</h2>';
+    estourarConfetes();
+  }
+
+  function estourarConfetes() {
+    const confetes = document.getElementById('confetes');
+    for (let i = 0; i < 100; i++) {
+      const c = document.createElement('div');
+      c.style.width = '10px';
+      c.style.height = '10px';
+      c.style.borderRadius = '50%';
+      c.style.background = `hsl(${Math.random() * 360}, 100%, 70%)`;
+      c.style.position = 'absolute';
+      c.style.top = Math.random() * window.innerHeight + 'px';
+      c.style.left = Math.random() < 0.5 ? '-10px' : '100vw';
+      c.style.transition = 'transform 2s ease-out';
+      confetes.appendChild(c);
+      setTimeout(() => {
+        c.style.transform = `translateX(${Math.random() < 0.5 ? '100vw' : '-100vw'}) translateY(${Math.random() * -200}px)`;
+      }, 10);
+      setTimeout(() => confetes.removeChild(c), 2500);
     }
-  </script>
-
-  <footer>
-    <p>Com amor (e mto carinho no coração), menininho Ennzho 💌</p>
-    <p>LUANA reservada só pro Ennzho ©</p>
-  </footer>
-
+  }
+</script>
 </body>
 </html>
